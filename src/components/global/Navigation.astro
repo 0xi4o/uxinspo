@@ -1,0 +1,58 @@
+<section class='border-b border-black/5 '>
+	<div class='w-full mx-auto md:px-12 px-8 max-w-7xl lg:px-16'>
+		<div
+			x-data='{ open: false }'
+			class='relative flex flex-col w-full py-5 mx-auto md:items-center md:justify-between md:flex-row md:px-6'
+		>
+			<div
+				class='flex flex-row items-center justify-between lg:justify-start'
+			>
+				<a
+					href='/'
+					class='lg:pr-8 inline-flex items-center gap-3 text-black'
+				>
+					<span class='font-bold font-display'>AstroSaas</span>
+				</a>
+				<button
+					@click='open = !open'
+					class='inline-flex items-center justify-center p-2 text-slate-400 hover:text-black focus:outline-none focus:text-black lg:hidden'
+				>
+					<svg
+						class='w-6 h-6'
+						stroke='currentColor'
+						fill='none'
+						viewBox='0 0 24 24'
+					>
+						<path
+							:class="{'hidden': open, 'inline-flex': !open }"
+							class='inline-flex'
+							stroke-linecap='round'
+							stroke-linejoin='round'
+							stroke-width='2'
+							d='M4 6h16M4 12h16M4 18h16'></path>
+						<path
+							:class="{'hidden': !open, 'inline-flex': open }"
+							class='hidden'
+							stroke-linecap='round'
+							stroke-linejoin='round'
+							stroke-width='2'
+							d='M6 18L18 6M6 6l12 12'></path>
+					</svg>
+				</button>
+			</div>
+			<nav
+				:class="{'flex': open, 'hidden': !open}"
+				class='flex-col items-center flex-grow hidden md:pb-0 md:flex md:justify-end md:flex-row'
+			>
+				<a
+					class='px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400 lg:ml-auto'
+					href='/categories'>Categories</a
+				>
+				<a
+					class='px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400'
+					href='/about'>About</a
+				>
+			</nav>
+		</div>
+	</div>
+</section>
