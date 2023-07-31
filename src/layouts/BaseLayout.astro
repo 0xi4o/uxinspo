@@ -1,7 +1,9 @@
 ---
 import BaseHead from '@/components/BaseHead.astro'
+import Navbar from '@/components/global/Navbar.astro'
 import Footer from '@/components/global/Footer.astro'
-import Navigation from '@/components/global/Navigation.astro'
+
+import '@/styles/global.css'
 ---
 
 <html lang='en'>
@@ -9,8 +11,8 @@ import Navigation from '@/components/global/Navigation.astro'
 		<BaseHead />
 	</head>
 
-	<body class='w-screen h-auto min-h-screen overflow-y-auto'>
-		<Navigation />
+	<body class='w-screen h-auto min-h-screen overflow-y-auto overflow-x-hidden bg-background'>
+		<Navbar />
 		<slot />
 		<Footer />
 	</body>
