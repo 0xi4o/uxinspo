@@ -1,5 +1,30 @@
 ---
+import { Image } from '@astrojs/image/components'
 import ContentLayout from '@/layouts/ContentLayout.astro'
+import categories from '@/data/categories'
 ---
 
-<ContentLayout>Categories</ContentLayout>
+<ContentLayout>
+	{
+		categories.map((category) => (
+			<figure>
+				<a href={`/category/${category.type}`}>
+					<div class='bg-text/5 p-4 rounded-3xl' style=''>
+						<Image
+							alt={`${category.title} thumbnail`}
+                            aspectRatio='16:9'
+							class='relative w-full lg:rounded-2xl object-cover rounded shadow-2xl'
+							src={category.image}
+                            width={410}
+						/>
+					</div>
+					<div class='mt-4 flex justify-between px-6'>
+						<p class='mt-1 text-lg font-medium leading-6 text-text'>
+							{category.title}
+						</p>
+					</div>
+				</a>
+			</figure>
+		))
+	}
+</ContentLayout>
