@@ -8,15 +8,15 @@ import mdx from '@astrojs/mdx'
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://ui-inspo.vercel.app/',
-    integrations: [
-        tailwind(),
-        image({
-            serviceEntryPoint: '@astrojs/image/sharp',
-        }),
-        compress(),
-        partytown(),
-        sitemap(),
-        mdx(),
-    ],
+	site: 'https://ui-inspo.vercel.app/',
+	integrations: [
+		tailwind(),
+		image({
+			serviceEntryPoint: '@astrojs/image/sharp',
+		}),
+		compress(),
+		partytown(),
+		sitemap(),
+		mdx(),
+	],
 })
