@@ -1,6 +1,7 @@
 ---
 product: Linear
 excerpt: ''
+image: '/images/settings/linear.png'
 category: settings
 website: https://linear.app/
 date_published: 2023-07-31T14:17:39.314Z
@@ -10,4 +11,4 @@ import { Image } from '@astrojs/image/components'
 
 # Linear
 
-<Image src='/images/settings/linear.png' alt='Linear Settings' />
+<Image src={frontmatter.image} alt='Linear Settings' />
