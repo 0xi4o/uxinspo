@@ -1,26 +1,29 @@
 ---
+import { getCollection } from 'astro:content'
 import { Image } from '@astrojs/image/components'
 import ContentLayout from '@/layouts/ContentLayout.astro'
 import categories from '@/data/categories'
+
+const designs = await getCollection('ui', ({ data }) => !data.draft)
 ---
 
 <ContentLayout>
 	{
-		categories.map((category) => (
+		designs.map((design) => (
 			<figure>
-				<a href={`/category/${category.type}`}>
+				<a href={`/${design.slug}`}>
 					<div class='bg-text/5 p-4 rounded-3xl' style=''>
 						<Image
-							alt={`${category.title} thumbnail`}
-                            aspectRatio='16:9'
+							alt={`${design.data.product} thumbnail`}
+							aspectRatio='16:9'
 							class='relative w-full lg:rounded-2xl object-cover rounded shadow-2xl'
-							src={category.image}
-                            width={410}
+							src={design.data.image}
+							width={410}
 						/>
 					</div>
 					<div class='mt-4 flex justify-between px-6'>
 						<p class='mt-1 text-lg font-medium leading-6 text-text'>
-							{category.title}
+							{design.data.product}
 						</p>
 					</div>
 				</a>
