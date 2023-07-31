@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		/* toxic/neon yellow monochromatic */
+		/* --text: 254 254 230; */
+		/* --background: 4 4 1; */
+		/* --primary: 254 254 6; */
+		/* --secondary: 16 16 10; */
+		/* --accent: 228 228 7; */
+
+		/* neon green monochromatic */
+		--text: 249 254 230;
+		--background: 4 4 1;
+		--primary: 204 245 56;
+		--secondary: 20 25 1;
+		--accent: 177 224 6;
+	}
+}

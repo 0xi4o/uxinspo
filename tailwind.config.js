@@ -4,92 +4,19 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
     content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
     theme: {
-        fontSize: {
-            xs: [
-                '0.75rem',
-                {
-                    lineHeight: '1rem',
-                },
-            ],
-            sm: [
-                '0.875rem',
-                {
-                    lineHeight: '1.5rem',
-                },
-            ],
-            base: [
-                '1rem',
-                {
-                    lineHeight: '1.75rem',
-                },
-            ],
-            lg: [
-                '1.125rem',
-                {
-                    lineHeight: '2rem',
-                },
-            ],
-            xl: [
-                '1.25rem',
-                {
-                    lineHeight: '2rem',
-                },
-            ],
-            '2xl': [
-                '1.5rem',
-                {
-                    lineHeight: '2rem',
-                },
-            ],
-            '3xl': [
-                '2rem',
-                {
-                    lineHeight: '2.5rem',
-                },
-            ],
-            '4xl': [
-                '2.5rem',
-                {
-                    lineHeight: '3.5rem',
-                },
-            ],
-            '5xl': [
-                '3rem',
-                {
-                    lineHeight: '3.5rem',
-                },
-            ],
-            '6xl': [
-                '3.75rem',
-                {
-                    lineHeight: '1',
-                },
-            ],
-            '7xl': [
-                '4.5rem',
-                {
-                    lineHeight: '1.1',
-                },
-            ],
-            '8xl': [
-                '6rem',
-                {
-                    lineHeight: '1',
-                },
-            ],
-            '9xl': [
-                '8rem',
-                {
-                    lineHeight: '1',
-                },
-            ],
-        },
         extend: {
-            backgroundImage: (theme) => ({
-                screens: "url('/path-to/image.png')",
-            }),
-
             colors: {
+                text: 'rgb(var(--text) / <alpha-value>)',
+                background: 'rgb(var(--background) / <alpha-value>)',
+                primary: {
+                    DEFAULT: 'rgb(var(--primary) / <alpha-value>)',
+                },
+                secondary: {
+                    DEFAULT: 'rgb(var(--secondary) / <alpha-value>)',
+                },
+                accent: {
+                    DEFAULT: 'rgb(var(--accent) / <alpha-value>)',
+                },
                 brand: {
                     DEFAULT: '#2CB67D',
                     50: '#AEEBD2',
