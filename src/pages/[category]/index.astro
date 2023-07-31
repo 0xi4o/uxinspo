@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
 import { Image } from '@astrojs/image/components'
-import ContentLayout from '@/layouts/ContentLayout.astro'
+import GridLayout from '@/layouts/GridLayout.astro'
 import categories from '@/data/categories'
 
 export function getStaticPaths() {
@@ -13,10 +13,9 @@ export function getStaticPaths() {
 
 const { type } = Astro.props
 const designs = await getCollection('ui', ({ data }) => data.category === type)
-console.log(designs)
 ---
 
-<ContentLayout>
+<GridLayout>
 	{
 		designs.map((design) => (
 			<figure>
@@ -39,4 +38,4 @@ console.log(designs)
 			</figure>
 		))
 	}
-</ContentLayout>
+</GridLayout>

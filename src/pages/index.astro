@@ -1,13 +1,13 @@
 ---
 import { getCollection } from 'astro:content'
 import { Image } from '@astrojs/image/components'
-import ContentLayout from '@/layouts/ContentLayout.astro'
+import GridLayout from '@/layouts/GridLayout.astro'
 import categories from '@/data/categories'
 
 const designs = await getCollection('ui', ({ data }) => !data.draft)
 ---
 
-<ContentLayout>
+<GridLayout>
 	{
 		designs.map((design) => (
 			<figure>
@@ -30,4 +30,4 @@ const designs = await getCollection('ui', ({ data }) => !data.draft)
 			</figure>
 		))
 	}
-</ContentLayout>
+</GridLayout>
