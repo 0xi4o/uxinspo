@@ -9,9 +9,9 @@ export const CategoryItem = z.object({
 
 export type CategoryItem = z.infer<typeof CategoryItem>
 
-export const categories: CategoryItem[] = [
+const categories: CategoryItem[] = [
 	{
-		image: '/images/settings/linear.png',
+		image: '/images/dashboard/baremetrics.png',
 		title: 'Dashboard',
 		type: 'dashboard',
 	},
@@ -21,8 +21,10 @@ export const categories: CategoryItem[] = [
 		type: 'settings',
 	},
 	{
-		image: '/images/settings/linear.png',
-		title: 'Stats',
-		type: 'stats',
+		image: '/images/lists/sentry.png',
+		title: 'Lists & Tables',
+		type: 'lists-tables',
 	},
 ]
+
+export default categories

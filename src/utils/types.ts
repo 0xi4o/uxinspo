@@ -9,6 +9,6 @@ export const UiCategories = [
 	'profile',
 	'stats',
 	'library',
-	'lists',
+	'lists-tables',
 	'canvas',
 ] as const
