@@ -1,4 +1,4 @@
-<section class='border-b border-black/5 '>
+<nav class='border-b border-text/5'>
 	<div class='w-full mx-auto md:px-12 px-8 max-w-7xl lg:px-16'>
 		<div
 			x-data='{ open: false }'
@@ -9,13 +9,13 @@
 			>
 				<a
 					href='/'
-					class='lg:pr-8 inline-flex items-center gap-3 text-black'
+					class='lg:pr-8 inline-flex items-center gap-3 text-text'
 				>
-					<span class='font-bold font-display'>AstroSaas</span>
+					<span class='font-bold font-display'>UI Inspo</span>
 				</a>
 				<button
 					@click='open = !open'
-					class='inline-flex items-center justify-center p-2 text-slate-400 hover:text-black focus:outline-none focus:text-black lg:hidden'
+					class='inline-flex items-center justify-center p-2 text-text hover:text-primary focus:outline-none focus:text-text lg:hidden'
 				>
 					<svg
 						class='w-6 h-6'
@@ -45,14 +45,14 @@
 				class='flex-col items-center flex-grow hidden md:pb-0 md:flex md:justify-end md:flex-row'
 			>
 				<a
-					class='px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400 lg:ml-auto'
+					class='px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-text hover:text-primary lg:ml-auto'
 					href='/categories'>Categories</a
 				>
 				<a
-					class='px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400'
+					class='px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-text hover:text-primary'
 					href='/about'>About</a
 				>
 			</nav>
 		</div>
 	</div>
-</section>
+</nav>
