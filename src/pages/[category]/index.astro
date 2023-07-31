@@ -1,10 +1,42 @@
 ---
 import { getCollection } from 'astro:content'
+import { Image } from '@astrojs/image/components'
+import ContentLayout from '@/layouts/ContentLayout.astro'
+import categories from '@/data/categories'
 
-const designs = await getCollection('ui')
+export function getStaticPaths() {
+	return categories.map((category) => ({
+		params: { category: category.type },
+		props: { type: category.type },
+	}))
+}
+
+const { type } = Astro.props
+const designs = await getCollection('ui', ({ data }) => data.category === type)
 console.log(designs)
 ---
 
-<div>
-    Category
-</div>
+<ContentLayout>
+	{
+		designs.map((design) => (
+			<figure>
+				<a href={`/${design.slug}`}>
+					<div class='bg-text/5 p-4 rounded-3xl' style=''>
+						<Image
+							alt={`${design.data.product} thumbnail`}
+							aspectRatio='16:9'
+							class='relative w-full lg:rounded-2xl object-cover rounded shadow-2xl'
+							src={design.data.image}
+							width={410}
+						/>
+					</div>
+					<div class='mt-4 flex justify-between px-6'>
+						<p class='mt-1 text-lg font-medium leading-6 text-text'>
+							{design.data.product}
+						</p>
+					</div>
+				</a>
+			</figure>
+		))
+	}
+</ContentLayout>
