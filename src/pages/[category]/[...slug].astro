@@ -1,0 +1,39 @@
+---
+import { CollectionEntry, getCollection } from 'astro:content'
+import ContentLayout from '@/layouts/ContentLayout.astro'
+import categories from '@/data/categories'
+
+export async function getStaticPaths() {
+	const categoryPaths = categories.map((category) => ({
+		params: { category: category.type },
+	}))
+
+	const designs = await getCollection('ui')
+	const designPaths = designs.map((design) => ({
+		params: {
+			category: design.data.category,
+			slug: design.slug
+				.replace(design.data.category, '')
+				.replace('/', ''),
+		},
+		props: { design },
+	}))
+
+	return [...categoryPaths, ...designPaths]
+}
+
+type Props = {
+	design: CollectionEntry<'ui'>
+}
+
+const { design } = Astro.props
+const { Content } = await design.render()
+---
+
+<ContentLayout>
+	<article
+		class='prose prose-invert max-w-none prose-blockquote:border-none prose-blockquote:font-normal prose-blockquote:bg-brand-500/10 prose-blockquote:rounded-md prose-blockquote:p-4'
+	>
+		<Content />
+	</article>
+</ContentLayout>
