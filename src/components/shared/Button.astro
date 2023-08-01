@@ -1,0 +1,15 @@
+---
+type Props = {
+	active?: boolean
+}
+
+const { active = false } = Astro.props
+---
+
+<button
+	class={`flex items-center justify-center px-4 py-2 border-[3px] border-white transition-all duration-200 shadow-[5px_5px_0_0_rgba(250,238,231,0.9)] hover:translate-x-[5px] hover:translate-y-[5px] hover:shadow-none text-lg rounded-md ${
+		active ? 'shadow-none bg-primary text-background' : 'text-text'
+	}`}
+>
+	<slot />
+</button>
