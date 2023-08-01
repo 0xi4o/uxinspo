@@ -1,25 +1,29 @@
 ---
 import GridLayout from '@/layouts/GridLayout.astro'
-import Card from '@/components/Card.astro'
+import Card from '@/components/shared/Card.astro'
 
 import categories from '@/data/categories'
 ---
 
 <GridLayout>
-	{
-		categories.map((category) => (
-			<>
-				<Card
-					image={{
-						alt: `${category.title} thumbnail`,
-						aspectRatio: 1.7777,
-						src: category.image,
-						width: 480,
-					}}
-					link={`/${category.type}`}
-					title={category.title}
-				/>
-			</>
-		))
-	}
+	<div
+		class='grid grid-cols-1 gap-6 py-12 lg:gap-y-32 md:grid-cols-2 lg:grid-cols-3'
+	>
+		{
+			categories.map((category) => (
+				<>
+					<Card
+						image={{
+							alt: `${category.title} thumbnail`,
+							aspectRatio: 1.7777,
+							src: category.image,
+							width: 480,
+						}}
+						link={`/${category.type}`}
+						title={category.title}
+					/>
+				</>
+			))
+		}
+	</div>
 </GridLayout>
