@@ -3,15 +3,20 @@ import { getCollection } from 'astro:content'
 import GridLayout from '@/layouts/GridLayout.astro'
 import Card from '@/components/shared/Card.astro'
 import Button from '@/components/shared/Button.astro'
+import categories from '@/data/categories'
 
 const designs = await getCollection('ui', ({ data }) => !data.draft)
 ---
 
 <GridLayout>
 	<div class='flex items-center gap-6'>
-		<Button>Dashboard</Button>
-		<Button>Lists/Tables</Button>
-		<Button>Settings</Button>
+		{
+			categories.map((category) => (
+				<a href={`/${category.type}`}>
+					<Button className='filter'>{category.title}</Button>
+				</a>
+			))
+		}
 	</div>
 	<div
 		class='grid grid-cols-1 gap-6 py-12 lg:gap-y-32 md:grid-cols-2 lg:grid-cols-3'
@@ -34,3 +39,22 @@ const designs = await getCollection('ui', ({ data }) => !data.draft)
 		}
 	</div>
 </GridLayout>
+
+<!-- <script> -->
+<!-- 	const buttons = document.querySelectorAll('button.filter') -->
+<!---->
+<!-- 	buttons.forEach((button) => { -->
+<!-- 		button.addEventListener('click', (event) => { -->
+<!-- 			const button = event.target -->
+<!-- 			// @ts-ignore -->
+<!-- 			const isActive = button.getAttribute('data-active') -->
+<!-- 			if (isActive) { -->
+<!-- 				// @ts-ignore -->
+<!-- 				button.setAttribute('data-active', false) -->
+<!-- 			} else { -->
+<!-- 				// @ts-ignore -->
+<!-- 				button.setAttribute('data-active', true) -->
+<!-- 			} -->
+<!-- 		}) -->
+<!-- 	}) -->
+<!-- </script> -->
