@@ -1,26 +1,36 @@
 ---
 import { getCollection } from 'astro:content'
 import GridLayout from '@/layouts/GridLayout.astro'
-import Card from '@/components/Card.astro'
+import Card from '@/components/shared/Card.astro'
+import Button from '@/components/shared/Button.astro'
 
 const designs = await getCollection('ui', ({ data }) => !data.draft)
 ---
 
 <GridLayout>
-	{
-		designs.map((design) => (
-			<>
-				<Card
-					image={{
-						alt: `${design.data.product} thumbnail`,
-						aspectRatio: 1.7777,
-						src: design.data.image,
-						width: 480,
-					}}
-					link={`/${design.slug}`}
-					title={design.data.product}
-				/>
-			</>
-		))
-	}
+	<div class='flex items-center gap-6'>
+		<Button>Dashboard</Button>
+		<Button>Lists/Tables</Button>
+		<Button>Settings</Button>
+	</div>
+	<div
+		class='grid grid-cols-1 gap-6 py-12 lg:gap-y-32 md:grid-cols-2 lg:grid-cols-3'
+	>
+		{
+			designs.map((design) => (
+				<>
+					<Card
+						image={{
+							alt: `${design.data.product} thumbnail`,
+							aspectRatio: 1.7777,
+							src: design.data.image,
+							width: 480,
+						}}
+						link={`/${design.slug}`}
+						title={design.data.product}
+					/>
+				</>
+			))
+		}
+	</div>
 </GridLayout>
