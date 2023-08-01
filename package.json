@@ -2,6 +2,7 @@
 	"name": "@mikes/starter",
 	"version": "0.0.1",
 	"private": true,
+	"type": "module",
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
@@ -26,6 +27,7 @@
 		"@astrojs/react": "^2.2.1",
 		"@astrojs/sitemap": "^2.0.1",
 		"@astrojs/tailwind": "^4.0.0",
+		"@astrojs/vercel": "^3.7.4",
 		"@astrolib/seo": "^0.4.0",
 		"@fontsource-variable/league-spartan": "^5.0.5",
 		"@fontsource/libre-baskerville": "^5.0.5",
