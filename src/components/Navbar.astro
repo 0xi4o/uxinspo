@@ -2,8 +2,8 @@
 import { Image } from '@astrojs/image/components'
 ---
 
-<header class='w-full h-24 flex items-center border-b border-text/5'>
-	<div class='w-full h-full mx-auto md:px-12 px-8 max-w-7xl lg:px-16'>
+<header class='w-full h-24 flex items-center border-b border-text/5 bg-background'>
+	<div class='w-full h-full mx-auto md:px-12 px-8 max-w-[96rem] lg:px-16'>
 		<div
 			x-data='{ open: false }'
 			class='relative flex flex-col w-full h-full py-5 mx-auto md:items-center md:justify-between md:flex-row'
@@ -24,7 +24,7 @@ import { Image } from '@astrojs/image/components'
 				</a>
 				<button
 					@click='open = !open'
-					class='inline-flex items-center justify-center p-2 text-text hover:text-primary focus:outline-none focus:text-text lg:hidden'
+					class='inline-flex items-center justify-center p-2 text-text hover:text-primary focus:outline-none focus:text-primary lg:hidden'
 				>
 					<svg
 						class='w-6 h-6'
@@ -54,11 +54,11 @@ import { Image } from '@astrojs/image/components'
 				class='flex-col items-center flex-grow hidden md:pb-0 md:flex md:justify-end md:flex-row'
 			>
 				<a
-					class='px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-text hover:text-primary lg:ml-auto'
+					class='px-2 lg:px-6 py-2 md:px-3 text-lg font-medium text-text hover:text-primary lg:ml-auto'
 					href='/categories'>Categories</a
 				>
 				<a
-					class='px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-text hover:text-primary'
+					class='px-2 lg:px-6 py-2 md:px-3 text-lg font-medium text-text hover:text-primary'
 					href='/about'>About</a
 				>
 			</nav>
