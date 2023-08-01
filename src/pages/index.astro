@@ -11,18 +11,16 @@ const designs = await getCollection('ui', ({ data }) => !data.draft)
 		designs.map((design) => (
 			<figure>
 				<a href={`/${design.slug}`}>
-					<div class='bg-text/5 p-4 rounded-3xl' style=''>
-						<div class='relative w-full lg:rounded-2xl object-cover rounded shadow-2xl'>
-							<Image
-								src={design.data.image}
-								alt={`${design.data.product} thumbnail`}
-								width={410}
-								aspectRatio={4}
-							/>
-						</div>
+					<div class='relative w-full object-cover shadow-[5px_5px_0_0_rgba(250,238,231,0.9)] border-2 border-white transition-all duration-200 hover:shadow-none'>
+						<Image
+							src={design.data.image}
+							alt={`${design.data.product} thumbnail`}
+							width={410}
+							aspectRatio={1.7777}
+						/>
 					</div>
-					<div class='mt-4 flex justify-between px-6'>
-						<p class='mt-1 text-lg font-medium leading-6 text-text'>
+					<div class='mt-4 flex justify-between px-2'>
+						<p class='mt-1 text-xl font-medium leading-6 text-text'>
 							{design.data.product}
 						</p>
 					</div>
