@@ -13,7 +13,7 @@ const { label, isUnderline, ...props } = Astro.props
 	href={props.href}
 	class:list={{
 		['text-text/50 hover:text-text cursor-pointer']: true,
-		['underline decoration-dashed underline-offset-8']: isUnderline,
+		['underline underline-offset-8']: isUnderline,
 	}}
 	{...props}
 	rel='noreferrer'
