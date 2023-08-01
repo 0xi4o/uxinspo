@@ -30,18 +30,13 @@ const footerData = [
 				label: 'Rescribe',
 				link: 'https://rescribe.site/',
 			},
-		],
-	},
-	{
-		title: 'Links',
-		items: [
 			{
-				label: 'Catalyst UI',
-				link: 'https://catalyst-ui.com/',
+				label: 'Aurelius',
+				link: 'https://aurelius.ink/',
 			},
 			{
-				label: 'Rescribe',
-				link: 'https://rescribe.site/',
+				label: 'Synthwave Stack',
+				link: 'https://github.com/i4o-oss/synthwave-stack',
 			},
 		],
 	},
@@ -54,21 +49,53 @@ const footerData = [
 			<div
 				class='flex flex-col items-start justify-center w-full lg:w-1/3 gap-4'
 			>
-				<p class='text-white font-bold text-xl -ml-3'>
+				<div class='-ml-3'>
 					<Image
 						src='/logo.png'
 						alt='uxinspo logo'
 						height={32}
 						aspectRatio='4:1'
 					/>
-				</p>
-				<p
-					class='sm:w-[24rem] lg:w-[30rem] xl:w-[36rem] text-gray-400 leading-loose text-center lg:text-left mx-auto lg:mx-0 font-serif'
+				</div>
+				<div
+					class='flex items-center gap-2 sm:w-[24rem] lg:w-[30rem] xl:w-[36rem] text-text/50 leading-loose text-center lg:text-left mx-auto lg:mx-0 font-sans text-lg'
 				>
-					A curated collection of web app designs for inspiration and
-					reference. Take inspiration from hundreds of SaaS
-					application UIs from real companies.
-				</p>
+					<svg
+						class='h-5 w-5 -mt-1'
+						xmlns='http://www.w3.org/2000/svg'
+						viewBox='0 0 24 24'
+						fill='none'
+						stroke='currentColor'
+						stroke-width='2'
+						stroke-linecap='round'
+						stroke-linejoin='round'
+					>
+						<path d='m7 11 2-2-2-2'></path>
+						<path d='M11 13h4'></path>
+						<rect x='3' y='3' width='18' height='18' rx='2' ry='2'
+						></rect>
+					</svg>
+					<p class='flex items-center'>
+						Built by&nbsp;
+						<Link
+							href='https://i4o.dev'
+							label='i4o'
+							isUnderline
+							target='_blank'
+						/>
+						 .
+					</p>
+					<p class='flex items-center'>
+						The source code is available on&nbsp;
+						<Link
+							href='https://github.com/i4o-dev/uxinspo'
+							label='Github'
+							isUnderline
+							target='_blank'
+						/>
+						 .
+					</p>
+				</div>
 			</div>
 			<div
 				class='w-full lg:w-2/3 hidden lg:flex flex-wrap justify-start gap-24'
@@ -115,34 +142,7 @@ const footerData = [
 						}
 					</ul>
 				</div>
-				<div class='w-full md:w-1/3 lg:w-auto'>
-					<h3 class='mb-6 font-bold text-white font-sans'>
-						{footerData[3].title}
-					</h3>
-					<ul>
-						{
-							footerData[3].items?.map((item) => (
-								<li class='mb-4'>
-									<Link
-										href={item.link}
-										label={item.label}
-										target='_self'
-									/>
-								</li>
-							))
-						}
-					</ul>
-				</div>
 			</div>
 		</div>
-		<p
-			class='lg:text-center text-base text-text/50 border-t border-text/5 pt-12 mt-16 hidden lg:block'
-		>
-			2023 &copy; <Link
-				href='https://i4o.dev'
-				label='Ilango Rajagopal'
-				target='_blank'
-			/>
-		</p>
 	</div>
 </footer>
