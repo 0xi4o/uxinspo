@@ -5,10 +5,11 @@ import compress from 'astro-compress'
 import partytown from '@astrojs/partytown'
 import sitemap from '@astrojs/sitemap'
 import mdx from '@astrojs/mdx'
+import react from '@astrojs/react'
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://ui-inspo.vercel.app/',
+	site: 'https://uxinspo.vercel.app/',
 	integrations: [
 		tailwind(),
 		image({
@@ -18,5 +19,6 @@ export default defineConfig({
 		partytown(),
 		sitemap(),
 		mdx(),
+		react(),
 	],
 })
