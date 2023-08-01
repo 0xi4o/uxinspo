@@ -1,0 +1,47 @@
+---
+import { Image } from '@astrojs/image/components'
+// import ExternalScripts from './ExternalScripts.astro'
+import '@/styles/lightgallery.css'
+import '@/styles/lg-zoom.css'
+import '@/styles/lg-thumbnail.css'
+
+type Props = {
+	alt: string
+	aspectRatio: number
+	src: string
+	width: number
+}
+const { alt, aspectRatio, src, width } = Astro.props
+---
+
+<figure class='flex flex-col'>
+	<div
+		class='image relative flex h-auto w-full border-2 border-white object-cover shadow-[5px_5px_0_0_rgba(250,238,231,0.9)] transition-all duration-200 hover:shadow-none'
+		id='lg'
+	>
+		<a href={src}>
+			<Image
+				alt={alt}
+				aspectRatio={aspectRatio}
+				src={src}
+				width={width}
+			/>
+		</a>
+	</div>
+</figure>
+
+<!-- <ExternalScripts /> -->
+<script>
+	import lightgallery from 'lightgallery'
+	import lgThumbnail from 'lightgallery/plugins/thumbnail'
+	import lgZoom from 'lightgallery/plugins/zoom'
+
+	const galleryContainer = document.getElementById('lg')
+
+	lightgallery(galleryContainer, {
+        counter: false,
+        download: false,
+		plugins: [lgThumbnail, lgZoom],
+        thumbnail: true
+	})
+</script>
