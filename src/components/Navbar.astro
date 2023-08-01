@@ -1,17 +1,26 @@
-<nav class='border-b border-text/5'>
-	<div class='w-full mx-auto md:px-12 px-8 max-w-7xl lg:px-16'>
+---
+import { Image } from '@astrojs/image/components'
+---
+
+<header class='w-full h-24 flex items-center border-b border-text/5'>
+	<div class='w-full h-full mx-auto md:px-12 px-8 max-w-7xl lg:px-16'>
 		<div
 			x-data='{ open: false }'
-			class='relative flex flex-col w-full py-5 mx-auto md:items-center md:justify-between md:flex-row md:px-6'
+			class='relative flex flex-col w-full h-full py-5 mx-auto md:items-center md:justify-between md:flex-row'
 		>
 			<div
 				class='flex flex-row items-center justify-between lg:justify-start'
 			>
 				<a
 					href='/'
-					class='lg:pr-8 inline-flex items-center gap-3 text-text'
+					class='lg:pr-8 inline-flex items-center gap-3 text-text -ml-3'
 				>
-					<span class='font-bold font-display'>UI Inspo</span>
+					<Image
+						src='/logo.png'
+						alt='uxinspo logo'
+						height={32}
+						aspectRatio='4:1'
+					/>
 				</a>
 				<button
 					@click='open = !open'
@@ -55,4 +64,4 @@
 			</nav>
 		</div>
 	</div>
-</nav>
+</header>
