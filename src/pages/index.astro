@@ -2,7 +2,6 @@
 import { getCollection } from 'astro:content'
 import { Image } from '@astrojs/image/components'
 import GridLayout from '@/layouts/GridLayout.astro'
-import categories from '@/data/categories'
 
 const designs = await getCollection('ui', ({ data }) => !data.draft)
 ---
@@ -13,13 +12,14 @@ const designs = await getCollection('ui', ({ data }) => !data.draft)
 			<figure>
 				<a href={`/${design.slug}`}>
 					<div class='bg-text/5 p-4 rounded-3xl' style=''>
-						<Image
-							alt={`${design.data.product} thumbnail`}
-							aspectRatio='16:9'
-							class='relative w-full lg:rounded-2xl object-cover rounded shadow-2xl'
-							src={design.data.image}
-							width={410}
-						/>
+						<div class='relative w-full lg:rounded-2xl object-cover rounded shadow-2xl'>
+							<Image
+								src={design.data.image}
+								alt={`${design.data.product} thumbnail`}
+								width={410}
+								aspectRatio={4}
+							/>
+						</div>
 					</div>
 					<div class='mt-4 flex justify-between px-6'>
 						<p class='mt-1 text-lg font-medium leading-6 text-text'>
