@@ -3,8 +3,20 @@ import { getCollection } from 'astro:content'
 import GridLayout from '@/layouts/GridLayout.astro'
 import Card from '@/components/Card.astro'
 
-const { category } = Astro.params
-const designs = await getCollection('ui', ({ data }) => data.category === category)
+import categories from '@/data/categories'
+
+export function getStaticPaths() {
+	return categories.map((item) => ({
+		params: { category: item.type },
+		props: { category: item.type },
+	}))
+}
+
+const { category } = Astro.props
+const designs = await getCollection(
+	'ui',
+	({ data }) => data.category === category
+)
 ---
 
 <GridLayout>

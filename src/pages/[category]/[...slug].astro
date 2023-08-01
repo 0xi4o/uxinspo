@@ -1,10 +1,31 @@
 ---
-import { getEntry } from 'astro:content'
+import { CollectionEntry, getCollection } from 'astro:content'
 import ContentLayout from '@/layouts/ContentLayout.astro'
 
-const { category, slug } = Astro.params
-const design = await getEntry('ui', `${category}/${slug}`)
-// @ts-ignore
+import categories from '@/data/categories'
+
+export async function getStaticPaths() {
+	const categoryPaths = categories.map((item) => ({
+		params: { category: item.type },
+	}))
+	const designs = await getCollection('ui')
+	const designPaths = designs.map((design) => ({
+		params: {
+			category: design.data.category,
+			slug: design.slug
+				.replace(design.data.category, '')
+				.replace('/', ''),
+		},
+		props: { design },
+	}))
+	return [...categoryPaths, ...designPaths]
+}
+
+type Props = {
+	design: CollectionEntry<'ui'>
+}
+
+const { design } = Astro.props
 const { Content } = await design.render()
 ---
 
