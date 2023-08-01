@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
-import { Image } from '@astrojs/image/components'
 import GridLayout from '@/layouts/GridLayout.astro'
+import Card from '@/components/Card.astro'
 
 const designs = await getCollection('ui', ({ data }) => !data.draft)
 ---
@@ -9,23 +9,18 @@ const designs = await getCollection('ui', ({ data }) => !data.draft)
 <GridLayout>
 	{
 		designs.map((design) => (
-			<figure>
-				<a href={`/${design.slug}`}>
-					<div class='relative w-full object-cover shadow-[5px_5px_0_0_rgba(250,238,231,0.9)] border-2 border-white transition-all duration-200 hover:shadow-none'>
-						<Image
-							src={design.data.image}
-							alt={`${design.data.product} thumbnail`}
-							width={410}
-							aspectRatio={1.7777}
-						/>
-					</div>
-					<div class='mt-4 flex justify-between px-2'>
-						<p class='mt-1 text-xl font-medium leading-6 text-text'>
-							{design.data.product}
-						</p>
-					</div>
-				</a>
-			</figure>
+			<>
+				<Card
+					image={{
+						alt: `${design.data.product} thumbnail`,
+						aspectRatio: 1.7777,
+						src: design.data.image,
+						width: 410,
+					}}
+					link={`/${design.slug}`}
+					title={design.data.product}
+				/>
+			</>
 		))
 	}
 </GridLayout>

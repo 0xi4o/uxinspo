@@ -1,30 +1,25 @@
 ---
-import { Image } from '@astrojs/image/components'
 import GridLayout from '@/layouts/GridLayout.astro'
+import Card from '@/components/Card.astro'
+
 import categories from '@/data/categories'
 ---
 
 <GridLayout>
 	{
 		categories.map((category) => (
-			<figure>
-				<a href={`/${category.type}`}>
-					<div class='bg-text/5 p-4 rounded-3xl' style=''>
-						<Image
-							alt={`${category.title} thumbnail`}
-							aspectRatio='16:9'
-							class='relative w-full lg:rounded-2xl object-cover rounded shadow-2xl'
-							src={category.image}
-							width={410}
-						/>
-					</div>
-					<div class='mt-4 flex justify-between px-6'>
-						<p class='mt-1 text-lg font-medium leading-6 text-text'>
-							{category.title}
-						</p>
-					</div>
-				</a>
-			</figure>
+			<>
+				<Card
+					image={{
+						alt: `${category.title} thumbnail`,
+						aspectRatio: 1.7777,
+						src: category.image,
+						width: 410,
+					}}
+					link={`/${category.type}`}
+					title={category.title}
+				/>
+			</>
 		))
 	}
 </GridLayout>
