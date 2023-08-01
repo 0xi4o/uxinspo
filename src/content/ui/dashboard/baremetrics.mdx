@@ -7,8 +7,8 @@ website: https://baremetrics.app/
 date_published: 2023-07-31T14:17:39.314Z
 ---
 
-import { Image } from '@astrojs/image/components'
+import ContentCard from '@/components/ContentCard.astro'
 
 # Baremetrics
 
-<Image src={frontmatter.image} alt='Baremetrics Dashboard' width={954} aspectRatio='16:9' />
+<ContentCard alt='Baremetrics Dashboard' aspectRatio='16:9' src={frontmatter.image} width={1280} />

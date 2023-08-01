@@ -7,8 +7,8 @@ website: https://linear.app/
 date_published: 2023-07-31T14:17:39.314Z
 ---
 
-import { Image } from '@astrojs/image/components'
+import ContentCard from '@/components/ContentCard.astro'
 
 # Linear
 
-<Image src={frontmatter.image} alt='Linear Settings' width={954} aspectRatio='16:9' />
+<ContentCard alt='Linear Settings' aspectRatio='16:9' src={frontmatter.image} width={1280} />

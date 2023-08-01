@@ -7,8 +7,8 @@ website: https://sentry.io/
 date_published: 2023-07-31T14:17:39.314Z
 ---
 
-import { Image } from '@astrojs/image/components'
+import ContentCard from '@/components/ContentCard.astro'
 
-# Linear
+# Sentry
 
-<Image src={frontmatter.image} alt='Sentry List/Table' width={954} aspectRatio='16:9' />
+<ContentCard alt='Sentry List/Table' aspectRatio='16:9' src={frontmatter.image} width={1280} />
