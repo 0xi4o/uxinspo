@@ -21,7 +21,7 @@ const { image, link, title } = Astro.props
 <a href={link}>
 	<figure class='flex flex-col'>
 		<div
-			class='relative w-full object-cover shadow-[5px_5px_0_0_rgba(250,238,231,0.9)] border-2 border-white transition-all duration-200 hover:shadow-none'
+			class='relative w-full object-cover shadow-[5px_5px_0_0_rgba(250,238,231,0.9)] border-[3px] border-white transition-all duration-200 hover:translate-x-[5px] hover:translate-y-[5px] hover:shadow-none rounded-md overflow-hidden'
 		>
 			<Image
 				alt={image.alt}
