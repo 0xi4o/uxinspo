@@ -7,12 +7,11 @@ website: https://baremetrics.app/
 date_published: 2023-07-31T14:17:39.314Z
 ---
 
-import ContentCard from '@/components/ContentCard'
+import ContentCard from '@/components/ContentCard.astro'
 
 # Baremetrics
 
 <ContentCard
-	client:only="react"
 	alt='Baremetrics Dashboard'
 	aspectRatio='16:9'
 	src={frontmatter.image}
