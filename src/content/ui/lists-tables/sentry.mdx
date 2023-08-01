@@ -1,14 +1,20 @@
 ---
 product: Sentry
 excerpt: ''
-image: '/images/lists-tables/sentry.png' 
+image: '/images/lists-tables/sentry.png'
 category: lists-tables
 website: https://sentry.io/
 date_published: 2023-07-31T14:17:39.314Z
 ---
 
-import ContentCard from '@/components/ContentCard.astro'
+import ContentCard from '@/components/ContentCard'
 
 # Sentry
 
-<ContentCard alt='Sentry List/Table' aspectRatio='16:9' src={frontmatter.image} width={1280} />
+<ContentCard
+	client:load
+	alt='Sentry List/Table'
+	aspectRatio='16:9'
+	src={frontmatter.image}
+	width={1280}
+/>
