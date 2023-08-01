@@ -1,6 +1,5 @@
 ---
 import { Image } from '@astrojs/image/components'
-// import ExternalScripts from './ExternalScripts.astro'
 import '@/styles/lightgallery.css'
 import '@/styles/lg-zoom.css'
 import '@/styles/lg-thumbnail.css'
@@ -38,10 +37,11 @@ const { alt, aspectRatio, src, width } = Astro.props
 
 	const galleryContainer = document.getElementById('lg')
 
+	// @ts-ignore
 	lightgallery(galleryContainer, {
-        counter: false,
-        download: false,
+		counter: false,
+		download: false,
 		plugins: [lgThumbnail, lgZoom],
-        thumbnail: true
+		thumbnail: true,
 	})
 </script>
