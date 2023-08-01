@@ -1,0 +1,38 @@
+---
+import { Image } from '@astrojs/image/components'
+
+type CardImage = {
+	alt: string
+	aspectRatio: number
+	src: string
+	width: number
+}
+
+type Props = {
+	image: CardImage
+	link: string
+	title: string
+}
+
+const { image, link, title } = Astro.props
+---
+
+<a href={link}>
+	<figure class='flex flex-col'>
+		<div
+			class='relative w-full object-cover shadow-[5px_5px_0_0_rgba(250,238,231,0.9)] border-2 border-white transition-all duration-200 hover:shadow-none'
+		>
+			<Image
+				src={image.src}
+				alt={image.alt}
+				width={image.width}
+				aspectRatio={image.aspectRatio}
+			/>
+		</div>
+	</figure>
+	<div class='mt-4 flex justify-between px-2'>
+		<p class='mt-1 text-xl font-medium leading-6 text-text'>
+			{title}
+		</p>
+	</div>
+</a>
