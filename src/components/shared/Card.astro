@@ -36,10 +36,12 @@ const { image, link, tag, title } = Astro.props
 		<p class='mt-1 text-xl font-medium leading-6 text-text'>
 			{title}
 		</p>
-		<p
-			class='px-3 bg-text/10 text-text/50 inline-flex items-center justify-center rounded-lg text-sm'
-		>
-			{tag}
-		</p>
+		{
+			tag ? (
+				<p class='px-3 bg-text/10 text-text/50 inline-flex items-center justify-center rounded-lg text-sm'>
+					{tag}
+				</p>
+			) : null
+		}
 	</div>
 </a>
