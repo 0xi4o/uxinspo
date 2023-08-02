@@ -23,7 +23,7 @@ const presentation: Presentation = {
 		},
 		{
 			label: 'Github',
-			link: 'https://github.com/i4o-dev/saas-ui-inspo',
+			link: 'https://github.com/i4o-dev/uxinspo',
 		},
 	],
 }
