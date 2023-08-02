@@ -7,7 +7,7 @@ const { className } = Astro.props
 ---
 
 <button
-	class={`${className} flex items-center justify-center px-4 py-2 border-[3px] border-white shadow-[5px_5px_0_0_rgba(250,238,231,0.9)] rounded-md text-lg text-text transition-all duration-200 hover:translate-x-[5px] hover:translate-y-[5px] hover:shadow-none hover:bg-primary hover:text-background data-[active=true]:shadow-none data-[active=true]:bg-primary data-[active=true]:text-background data-[active=true]:translate-x-[5px] data-[active=true]:translate-y-[5px]`}
+	class={`${className} flex items-center justify-center px-4 py-2 gap-2 border-[3px] border-white shadow-[5px_5px_0_0_rgba(250,238,231,0.9)] rounded-md text-lg text-text transition-all duration-200 hover:translate-x-[5px] hover:translate-y-[5px] hover:shadow-none hover:bg-primary hover:text-background data-[active=true]:shadow-none data-[active=true]:bg-primary data-[active=true]:text-background data-[active=true]:translate-x-[5px] data-[active=true]:translate-y-[5px]`}
 >
 	<slot />
 </button>

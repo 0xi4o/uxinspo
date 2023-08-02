@@ -13,9 +13,10 @@ type Props = {
 	image: CardImage
 	link: string
 	title: string
+	tag?: string
 }
 
-const { image, link, title } = Astro.props
+const { image, link, tag, title } = Astro.props
 ---
 
 <a href={link}>
@@ -34,6 +35,11 @@ const { image, link, title } = Astro.props
 	<div class='mt-4 flex justify-between px-2'>
 		<p class='mt-1 text-xl font-medium leading-6 text-text'>
 			{title}
+		</p>
+		<p
+			class='px-3 bg-text/10 text-text/50 inline-flex items-center justify-center rounded-lg text-sm'
+		>
+			{tag}
 		</p>
 	</div>
 </a>
