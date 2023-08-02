@@ -11,21 +11,23 @@ const designs = await getCollection('ui', ({ data }) => !data.draft)
 <GridLayout>
 	<div class='flex flex-wrap items-center gap-6'>
 		{
-			categories.map((category) => {
-				const designsInCategory = designs.filter(
-					(design) => design.data.category === category.type
-				).length
-				return (
-					<a href={`/${category.type}`}>
-						<Button className='filter'>
-							{category.title}
-							<span class='px-3 bg-text/10 inline-flex items-center justify-center rounded-lg text-sm'>
-								{designsInCategory}
-							</span>
-						</Button>
-					</a>
-				)
-			})
+			categories
+				.filter((category) => !category.hide)
+				.map((category) => {
+					const designsInCategory = designs.filter(
+						(design) => design.data.category === category.type
+					).length
+					return (
+						<a href={`/${category.type}`}>
+							<Button className='filter'>
+								{category.title}
+								<span class='px-3 bg-text/10 inline-flex items-center justify-center rounded-lg text-sm'>
+									{designsInCategory}
+								</span>
+							</Button>
+						</a>
+					)
+				})
 		}
 	</div>
 	<div

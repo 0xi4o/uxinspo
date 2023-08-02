@@ -10,20 +10,22 @@ import categories from '@/data/categories'
 		class='w-full grid grid-cols-1 gap-8 py-12 md:grid-cols-2 lg:grid-cols-3'
 	>
 		{
-			categories.map((category) => (
-				<>
-					<Card
-						image={{
-							alt: `${category.title} thumbnail`,
-							aspectRatio: 1.7777,
-							src: category.image,
-							width: 480,
-						}}
-						link={`/${category.type}`}
-						title={category.title}
-					/>
-				</>
-			))
+			categories
+				.filter((category) => !category.hide)
+				.map((category) => (
+					<>
+						<Card
+							image={{
+								alt: `${category.title} thumbnail`,
+								aspectRatio: 1.7777,
+								src: category.image,
+								width: 480,
+							}}
+							link={`/${category.type}`}
+							title={category.title}
+						/>
+					</>
+				))
 		}
 	</div>
 </GridLayout>
