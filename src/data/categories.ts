@@ -16,6 +16,16 @@ const categories: CategoryItem[] = [
         type: 'activity-feeds',
     },
     {
+        image: '/thumbnails/analytics-metrics.png',
+        title: 'Analytics/Metrics',
+        type: 'analytics-metrics',
+    },
+    {
+        image: '/thumbnails/authentication.png',
+        title: 'Authentication',
+        type: 'authentication',
+    },
+    {
         image: '/thumbnails/boards.png',
         title: 'Boards',
         type: 'boards',
@@ -36,6 +46,11 @@ const categories: CategoryItem[] = [
         type: 'empty-states',
     },
     {
+        image: '/thumbnails/forms.png',
+        title: 'Forms',
+        type: 'forms',
+    },
+    {
         image: '/thumbnails/libraries.png',
         title: 'Libraries',
         type: 'libraries',
@@ -49,6 +64,11 @@ const categories: CategoryItem[] = [
         image: '/thumbnails/nudges.png',
         title: 'Nudges',
         type: 'nudges',
+    },
+    {
+        image: '/thumbnails/profiles.png',
+        title: 'Profiles',
+        type: 'profiles',
     },
     {
         image: '/thumbnails/settings.png',
