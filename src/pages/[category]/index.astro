@@ -20,24 +20,30 @@ const designs = await getCollection(
 ---
 
 <GridLayout>
-	<div
-		class='grid grid-cols-1 gap-8 py-12 md:grid-cols-2 lg:grid-cols-3'
-	>
+	<div class='w-full grid grid-cols-1 gap-8 py-12 md:grid-cols-2 lg:grid-cols-3'>
 		{
-			designs.map((design) => (
+			designs.length > 0 ? (
 				<>
-					<Card
-						image={{
-							alt: `${design.data.product} thumbnail`,
-							aspectRatio: 1.7777,
-							src: design.data.image,
-							width: 480,
-						}}
-						link={`/${design.slug}`}
-						title={design.data.product}
-					/>
+					{designs.map((design) => (
+						<>
+							<Card
+								image={{
+									alt: `${design.data.product} thumbnail`,
+									aspectRatio: 1.7777,
+									src: design.data.image,
+									width: 480,
+								}}
+								link={`/${design.slug}`}
+								title={design.data.product}
+							/>
+						</>
+					))}
 				</>
-			))
+			) : (
+				<div class='col-span-1 lg:col-span-3 px-16 py-32 flex items-center justify-center text-white text-2xl shadow-[10px_10px_0_-1px_rgb(22,22,22),10px_10px_0_rgb(255,255,255),20px_20px_0_-1px_rgb(22,22,22),20px_20px_0_rgb(255,255,255)] border border-white'>
+					Nothing here yet. Check back soon.
+				</div>
+			)
 		}
 	</div>
 </GridLayout>
