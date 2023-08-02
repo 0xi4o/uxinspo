@@ -11,11 +11,21 @@ const designs = await getCollection('ui', ({ data }) => !data.draft)
 <GridLayout>
 	<div class='flex flex-wrap items-center gap-6'>
 		{
-			categories.map((category) => (
-				<a href={`/${category.type}`}>
-					<Button className='filter'>{category.title}</Button>
-				</a>
-			))
+			categories.map((category) => {
+				const designsInCategory = designs.filter(
+					(design) => design.data.category === category.type
+				).length
+				return (
+					<a href={`/${category.type}`}>
+						<Button className='filter'>
+							{category.title}
+							<span class='px-3 bg-text/10 inline-flex items-center justify-center rounded-lg text-sm'>
+								{designsInCategory}
+							</span>
+						</Button>
+					</a>
+				)
+			})
 		}
 	</div>
 	<div
@@ -33,28 +43,10 @@ const designs = await getCollection('ui', ({ data }) => !data.draft)
 						}}
 						link={`/${design.slug}`}
 						title={design.data.product}
+						tag={design.data.category}
 					/>
 				</>
 			))
 		}
 	</div>
 </GridLayout>
-
-<!-- <script> -->
-<!-- 	const buttons = document.querySelectorAll('button.filter') -->
-<!---->
-<!-- 	buttons.forEach((button) => { -->
-<!-- 		button.addEventListener('click', (event) => { -->
-<!-- 			const button = event.target -->
-<!-- 			// @ts-ignore -->
-<!-- 			const isActive = button.getAttribute('data-active') -->
-<!-- 			if (isActive) { -->
-<!-- 				// @ts-ignore -->
-<!-- 				button.setAttribute('data-active', false) -->
-<!-- 			} else { -->
-<!-- 				// @ts-ignore -->
-<!-- 				button.setAttribute('data-active', true) -->
-<!-- 			} -->
-<!-- 		}) -->
-<!-- 	}) -->
-<!-- </script> -->
