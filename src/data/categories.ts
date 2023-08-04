@@ -80,6 +80,12 @@ const categories: CategoryItem[] = [
         title: 'Settings',
         type: 'settings',
     },
+    {
+        image: '/thumbnails/usage.png',
+        title: 'Usage',
+        type: 'usage',
+        hide: true
+    },
 ]
 
 export default categories
