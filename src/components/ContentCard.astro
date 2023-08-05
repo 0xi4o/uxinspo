@@ -6,9 +6,18 @@ type Props = {
 	alt: string
 	aspectRatio: number
 	src: string
+	thumbnail?: string
+	type?: string
 	width: number
 }
-const { alt, aspectRatio, src, width } = Astro.props
+const {
+	alt,
+	aspectRatio,
+	src,
+	thumbnail,
+	type = 'image/png',
+	width,
+} = Astro.props
 ---
 
 <figure class='flex flex-col'>
@@ -16,14 +25,30 @@ const { alt, aspectRatio, src, width } = Astro.props
 		class='image relative flex h-auto w-full border-2 border-white object-cover shadow-[5px_5px_0_0_rgba(250,238,231,0.9)] transition-all duration-200 hover:shadow-none'
 		id='lg'
 	>
-		<a href={src}>
-			<Image
-				alt={alt}
-				aspectRatio={aspectRatio}
-				src={src}
-				width={width}
-			/>
-		</a>
+		{
+			type === 'video/webm' ? (
+				<a
+					data-video={`{"source": [{"src": "${src}", "type": "video/webm"}]}`}
+					data-poster={thumbnail}
+				>
+					<Image
+						alt={alt}
+						aspectRatio={aspectRatio}
+						src={thumbnail}
+						width={width}
+					/>
+				</a>
+			) : (
+				<a href={src}>
+					<Image
+						alt={alt}
+						aspectRatio={aspectRatio}
+						src={src}
+						width={width}
+					/>
+				</a>
+			)
+		}
 	</div>
 </figure>
 
@@ -31,6 +56,7 @@ const { alt, aspectRatio, src, width } = Astro.props
 <script>
 	import lightgallery from 'lightgallery'
 	import lgThumbnail from 'lightgallery/plugins/thumbnail'
+	import lgVideo from 'lightgallery/plugins/video'
 	import lgZoom from 'lightgallery/plugins/zoom'
 
 	const galleryContainer = document.getElementById('lg')
@@ -39,7 +65,7 @@ const { alt, aspectRatio, src, width } = Astro.props
 	lightgallery(galleryContainer, {
 		counter: false,
 		download: false,
-		plugins: [lgThumbnail, lgZoom],
+		plugins: [lgThumbnail, lgVideo, lgZoom],
 		thumbnail: true,
 	})
 </script>
