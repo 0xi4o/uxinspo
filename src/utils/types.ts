@@ -10,6 +10,7 @@ export const UiCategories = [
     'libraries',
     'lists-tables',
     'nudges',
+    'onboarding',
     'profiles',
     'settings',
     'usage',

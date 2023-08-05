@@ -69,6 +69,11 @@ const categories: CategoryItem[] = [
         type: 'nudges',
     },
     {
+        image: '/thumbnails/onboarding.png',
+        title: 'Onboarding',
+        type: 'onboarding',
+    },
+    {
         image: '/thumbnails/profiles.png',
         title: 'Profiles',
         type: 'profiles',
