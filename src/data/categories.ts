@@ -83,7 +83,6 @@ const categories: CategoryItem[] = [
         image: '/thumbnails/usage.png',
         title: 'Usage',
         type: 'usage',
-        hide: true
     },
 ]
 
