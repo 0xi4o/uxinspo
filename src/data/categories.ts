@@ -20,7 +20,6 @@ const categories: CategoryItem[] = [
         image: '/thumbnails/analytics-metrics.png',
         title: 'Analytics/Metrics',
         type: 'analytics-metrics',
-        hide: true,
     },
     {
         image: '/thumbnails/authentication.png',
