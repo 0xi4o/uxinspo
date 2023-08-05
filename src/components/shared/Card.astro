@@ -1,6 +1,4 @@
 ---
-import { Image } from '@astrojs/image/components'
-
 // TODO: change the img element to @astrojs/image
 type CardImage = {
 	alt: string
@@ -24,9 +22,8 @@ const { image, link, tag, title } = Astro.props
 		<div
 			class='relative w-full object-cover shadow-[5px_5px_0_0_rgba(250,238,231,0.9)] border-[3px] border-white transition-all duration-200 hover:translate-x-[5px] hover:translate-y-[5px] hover:shadow-none rounded-md overflow-hidden'
 		>
-			<Image
+			<img
 				alt={image.alt}
-				aspectRatio={image.aspectRatio}
 				src={image.src}
 				width={image.width}
 			/>

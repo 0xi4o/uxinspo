@@ -47,7 +47,11 @@ const sortedDesigns = designs.sort(
 							alt: `${design.data.product} thumbnail`,
 							aspectRatio: 1.7777,
 							// @ts-ignore
-							src: design.data.thumbnail || design.data.image,
+							src:
+								design.data.thumbnail ||
+								(Array.isArray(design.data.image)
+									? design.data.image[0]
+									: design.data.image),
 							width: 480,
 						}}
 						link={`/${design.slug}`}
