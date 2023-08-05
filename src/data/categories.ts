@@ -25,7 +25,6 @@ const categories: CategoryItem[] = [
         image: '/thumbnails/authentication.png',
         title: 'Authentication',
         type: 'authentication',
-        hide: true,
     },
     {
         image: '/thumbnails/boards.png',
