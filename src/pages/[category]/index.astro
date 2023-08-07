@@ -20,7 +20,9 @@ const designs = await getCollection(
 ---
 
 <GridLayout>
-	<div class='w-full grid grid-cols-1 gap-8 py-12 md:grid-cols-2 lg:grid-cols-3'>
+	<div
+		class='w-full grid grid-cols-1 gap-8 py-12 md:grid-cols-2 lg:grid-cols-3'
+	>
 		{
 			designs.length > 0 ? (
 				<>
@@ -30,7 +32,12 @@ const designs = await getCollection(
 								image={{
 									alt: `${design.data.product} thumbnail`,
 									aspectRatio: 1.7777,
-									src: design.data.image,
+									// @ts-ignore
+									src:
+										design.data.thumbnail ||
+										(Array.isArray(design.data.image)
+											? design.data.image[0]
+											: design.data.image),
 									width: 480,
 								}}
 								link={`/${design.slug}`}
