@@ -1,3 +1,7 @@
+---
+import { Image } from '@astrojs/image/components'
+---
+
 <main
 	aria-labelledby='header'
 	class='relative overflow-hidden flex flex-shrink-0 border-y border-text/5 bg-background'
@@ -12,29 +16,31 @@
 	</div>
 	<div class='w-full mx-auto md:px-12 px-8 max-w-[96rem] lg:px-16 py-24'>
 		<div
-			x-data='{ open: false }'
-			class='relative flex flex-col w-full mx-auto md:items-center md:justify-between md:flex-row'
+			class='relative flex flex-col w-full md:items-center md:justify-between md:flex-row'
 		>
-			<div class='flex items-center gap-16'>
-				<div
-					class='w-full max-w-3xl flex flex-col items-start justify-center text-left gap-4'
+			<div
+				class='w-full max-w-3xl flex flex-col items-start justify-center text-left gap-4'
+			>
+				<h1
+					class='mt-4 font-bold sm:text-7xl text-4xl tracking-tighter font-sans text-white'
 				>
-					<h1
-						class='mt-4 font-bold sm:text-7xl text-4xl tracking-tighter font-sans text-white'
+					SaaS UI collection for <span class='text-primary'
+						>inspiration and reference</span
 					>
-						SaaS UI collection for <span class='text-primary'
-							>inspiration and reference</span
-						>
-					</h1>
-					<p
-						class='prose prose-invert prose-xl font-serif text-white'
-					>
-						<span class='text-primary font-semibold'>uxinspo</span>
-						 is a curated collection of web app UIs. Take
-						inspiration from hundreds of SaaS application UIs from
-						real companies.
-					</p>
-				</div>
+				</h1>
+				<p class='prose prose-invert prose-xl font-serif text-white'>
+					<span class='text-primary font-semibold'>uxinspo</span>
+					 is a curated collection of web app UIs. Take inspiration
+					from hundreds of SaaS application UIs from real companies.
+				</p>
+			</div>
+			<div class='w-full flex items-center justify-center'>
+				<Image
+					alt='hero image'
+					src='/hero.png'
+					width={480}
+					aspectRatio={1}
+				/>
 			</div>
 		</div>
 	</div>
