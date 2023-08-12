@@ -1,0 +1,22 @@
+---
+product: Tella
+excerpt: ''
+image: '/images/onboarding/tella.webm'
+thumbnail: '/images/onboarding/tella.png'
+category: onboarding
+website: https://tella.tv/
+date_published: 2023-08-12T15:20:58.557Z
+---
+
+import ContentCard from '@/components/ContentCard.astro'
+
+# Tella
+
+<ContentCard
+	alt='Tella Onboarding'
+	aspectRatio='16:9'
+	src={frontmatter.image}
+    thumbnail={frontmatter.thumbnail}
+    type='video/webm'
+	width={1280}
+/>
