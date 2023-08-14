@@ -19,7 +19,7 @@ const presentation: Presentation = {
 	socials: [
 		{
 			label: 'Twitter',
-			link: 'https://twitter.com/i4o_dev',
+			link: 'https://twitter.com/uxinspo_',
 		},
 		{
 			label: 'Github',
