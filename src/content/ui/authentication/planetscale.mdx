@@ -1,7 +1,11 @@
 ---
 product: Planetscale
 excerpt: ''
-image: ['/images/authentication/planetscale.png', '/images/authentication/planetscale2.png']
+image:
+    [
+        '/images/authentication/planetscale.png',
+        '/images/authentication/planetscale2.png',
+    ]
 thumbnail: '/images/authentication/planetscale.png'
 category: authentication
 website: https://planetscale.com/
@@ -15,8 +19,8 @@ import ContentCard from '@/components/ContentCard.astro'
 <ContentCard
 	alt='Planetscale Authentication'
 	aspectRatio='16:9'
-    group={true}
+	group={true}
 	src={frontmatter.image}
-    thumbnail={frontmatter.thumbnail}
+	thumbnail={frontmatter.thumbnail}
 	width={1280}
 />

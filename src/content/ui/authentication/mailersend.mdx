@@ -1,7 +1,13 @@
 ---
 product: Mailersend
 excerpt: ''
-image: ['/images/authentication/mailersend.png', '/images/authentication/mailersend2.png',  '/images/authentication/mailersend3.png', '/images/authentication/mailersend4.png']
+image:
+    [
+        '/images/authentication/mailersend.png',
+        '/images/authentication/mailersend2.png',
+        '/images/authentication/mailersend3.png',
+        '/images/authentication/mailersend4.png',
+    ]
 thumbnail: '/images/authentication/mailersend.png'
 category: authentication
 website: https://mailersend.com/
@@ -15,8 +21,8 @@ import ContentCard from '@/components/ContentCard.astro'
 <ContentCard
 	alt='Mailersend Authentication'
 	aspectRatio='16:9'
-    group={true}
+	group={true}
 	src={frontmatter.image}
-    thumbnail={frontmatter.thumbnail}
+	thumbnail={frontmatter.thumbnail}
 	width={1280}
 />

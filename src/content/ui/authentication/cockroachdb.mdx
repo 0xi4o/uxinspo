@@ -1,7 +1,11 @@
 ---
 product: CockroachDB
 excerpt: ''
-image: ['/images/authentication/cockroachdb.png', '/images/authentication/cockroachdb2.png']
+image:
+    [
+        '/images/authentication/cockroachdb.png',
+        '/images/authentication/cockroachdb2.png',
+    ]
 thumbnail: '/images/authentication/cockroachdb.png'
 category: authentication
 website: https://cockroachlabs.com/
@@ -15,8 +19,8 @@ import ContentCard from '@/components/ContentCard.astro'
 <ContentCard
 	alt='CockroachDB Authentication'
 	aspectRatio='16:9'
-    group={true}
+	group={true}
 	src={frontmatter.image}
-    thumbnail={frontmatter.thumbnail}
+	thumbnail={frontmatter.thumbnail}
 	width={1280}
 />
