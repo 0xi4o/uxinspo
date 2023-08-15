@@ -25,7 +25,7 @@ const {
 <figure class='flex flex-col'>
 	<div>
 		{
-			group ? (
+			Array.isArray(src) && group ? (
 				<div class='flex h-auto w-full flex-col gap-8' id='lg'>
 					{src.map((img) => (
 						<a

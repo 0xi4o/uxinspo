@@ -22,7 +22,13 @@ const { image, link, tag, title } = Astro.props
 		<div
 			class='relative w-full object-cover shadow-[5px_5px_0_0_rgba(250,238,231,0.9)] border-[3px] border-white transition-all duration-200 hover:translate-x-[5px] hover:translate-y-[5px] hover:shadow-none rounded-md overflow-hidden aspect-video'
 		>
-			<img alt={image.alt} src={image.src} width={image.width} />
+			<img
+				alt={image.alt}
+				class='w-full h-full object-cover'
+				loading='lazy'
+				src={image.src}
+				width={image.width}
+			/>
 		</div>
 	</figure>
 	<div class='mt-4 flex justify-between px-2'>
