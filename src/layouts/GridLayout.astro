@@ -42,3 +42,20 @@ Use AstroSeo in all the pages you want different Seo than the index page
 		</div>
 	</main>
 </BaseLayout>
+
+<script>
+	import lightgallery from 'lightgallery'
+	import lgThumbnail from 'lightgallery/plugins/thumbnail'
+	import lgVideo from 'lightgallery/plugins/video'
+	import lgZoom from 'lightgallery/plugins/zoom'
+
+	const galleryContainer = document.getElementById('lg')
+
+	// @ts-ignore
+	lightgallery(galleryContainer, {
+		counter: false,
+		download: false,
+		plugins: [lgThumbnail, lgVideo, lgZoom],
+		thumbnail: true,
+	})
+</script>

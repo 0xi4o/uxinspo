@@ -7,7 +7,9 @@ type Props = {
 	aspectRatio: number
 	group?: boolean
 	src: string | string[]
+	tag?: string
 	thumbnail?: string
+	title?: string
 	type?: string
 	width: number
 }
@@ -16,7 +18,9 @@ const {
 	aspectRatio,
 	group = false,
 	src,
+	tag,
 	thumbnail,
+	title,
 	type = 'image/png',
 	width,
 } = Astro.props
@@ -71,23 +75,17 @@ const {
 				</div>
 			)
 		}
+		<div class='mt-4 flex justify-between px-2'>
+			<p class='mt-1 text-xl font-medium leading-6 text-text'>
+				{title}
+			</p>
+			{
+				tag ? (
+					<p class='px-3 bg-text/10 text-text/50 inline-flex items-center justify-center rounded-lg text-sm'>
+						{tag}
+					</p>
+				) : null
+			}
+		</div>
 	</div>
 </figure>
-
-<!-- <ExternalScripts /> -->
-<script>
-	import lightgallery from 'lightgallery'
-	import lgThumbnail from 'lightgallery/plugins/thumbnail'
-	import lgVideo from 'lightgallery/plugins/video'
-	import lgZoom from 'lightgallery/plugins/zoom'
-
-	const galleryContainer = document.getElementById('lg')
-
-	// @ts-ignore
-	lightgallery(galleryContainer, {
-		counter: false,
-		download: false,
-		plugins: [lgThumbnail, lgVideo, lgZoom],
-		thumbnail: true,
-	})
-</script>
