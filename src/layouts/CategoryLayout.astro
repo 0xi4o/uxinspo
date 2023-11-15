@@ -1,0 +1,58 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { AstroSeo } from '@astrolib/seo'
+const { category } = Astro.props
+---
+
+<!---
+Use AstroSeo in all the pages you want different Seo than the index page
+-->
+<AstroSeo
+	title='uxinspo'
+	description='Curated collection of UI designs from real SaaS products'
+	canonical='https://uxinspo.site'
+	openGraph={{
+		url: 'https://uxinspo.site',
+		title: 'uxinspo',
+		description: 'Curated collection of UI designs from real SaaS products',
+		images: [
+			{
+				url: '/og.png',
+				width: 1200,
+				height: 630,
+				alt: 'Social open graph',
+				type: 'image/png',
+			},
+		],
+		site_name: 'uxinspo',
+	}}
+	twitter={{
+		handle: '@uxinspo_',
+		site: '@site',
+		cardType: 'summary_large_image',
+	}}
+/>
+<BaseLayout>
+	<main
+		class='relative overflow-hidden flex flex-col flex-grow h-auto bg-text/[1%]'
+	>
+		<div
+			class='w-full flex flex-col items-start justify-start gap-8 mx-auto md:px-12 px-8 max-w-[96rem] py-24 lg:px-16'
+		>
+			<div
+				class='w-full max-w-3xl flex flex-col items-start justify-center text-left gap-4'
+			>
+				<h1
+					class='mt-4 font-bold sm:text-7xl text-4xl tracking-tighter font-sans text-white'
+				>
+					{category || 'Categories'}
+				</h1>
+			</div>
+		</div>
+		<div
+			class='w-full flex flex-col items-start justify-start gap-8 mx-auto md:px-12 px-8 max-w-[96rem] pb-12 lg:px-16'
+		>
+			<slot />
+		</div>
+	</main>
+</BaseLayout>
