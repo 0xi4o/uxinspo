@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets'
 import SocialLinks from './SocialLinks.astro'
 import Link from './shared/Link.astro'
+import logo from '../assets/logo.png'
 const footerData = [
 	{
 		title: 'Socials',
@@ -51,10 +52,10 @@ const footerData = [
 			>
 				<div class='-ml-3'>
 					<Image
-						src='/logo.png'
+						src={logo}
 						alt='uxinspo logo'
+						width={128}
 						height={32}
-						aspectRatio='4:1'
 					/>
 				</div>
 				<div

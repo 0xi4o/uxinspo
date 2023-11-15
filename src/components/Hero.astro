@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets'
+import hero from '../assets/hero.png'
 ---
 
 <main
@@ -30,12 +31,7 @@ import { Image } from 'astro:assets'
 				</h1>
 			</div>
 			<div class='w-full flex items-center justify-center'>
-				<Image
-					alt='hero image'
-					src='/hero.png'
-					width={480}
-					aspectRatio={1}
-				/>
+				<Image alt='hero image' src={hero} width={480} height={480} />
 			</div>
 		</div>
 	</div>
