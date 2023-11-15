@@ -1,9 +1,10 @@
 ---
 import { getCollection } from 'astro:content'
-import GridLayout from '@/layouts/GridLayout.astro'
-import Card from '@/components/shared/Card.astro'
+import ContentCard from '@/components/ContentCard.astro'
 
 import categories from '@/data/categories'
+import CategoryLayout from '../../layouts/CategoryLayout.astro'
+import { capitalize } from '../../utils/helpers'
 
 export function getStaticPaths() {
 	return categories.map((item) => ({
@@ -19,31 +20,27 @@ const designs = await getCollection(
 )
 ---
 
-<GridLayout>
+<CategoryLayout category={capitalize(category)}>
 	<div
 		class='w-full grid grid-cols-1 gap-8 py-12 md:grid-cols-2 lg:grid-cols-3'
+		id='lg'
 	>
 		{
 			designs.length > 0 ? (
 				<>
 					{designs.map((design) => (
-						<>
-							<Card
-								image={{
-									alt: `${design.data.product} thumbnail`,
-									aspectRatio: 1.7777,
-									// @ts-ignore
-									src:
-										design.data.thumbnail ||
-										(Array.isArray(design.data.image)
-											? design.data.image[0]
-											: design.data.image),
-									width: 480,
-								}}
-								link={`/${design.slug}`}
-								title={design.data.product}
-							/>
-						</>
+						<ContentCard
+							alt={design.data.product}
+							aspectRatio={1.7777}
+							src={
+								design.data.thumbnail ||
+								(Array.isArray(design.data.image)
+									? design.data.image[0]
+									: design.data.image)
+							}
+							width={480}
+							title={design.data.product}
+						/>
 					))}
 				</>
 			) : (
@@ -53,4 +50,4 @@ const designs = await getCollection(
 			)
 		}
 	</div>
-</GridLayout>
+</CategoryLayout>

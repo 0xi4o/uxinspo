@@ -1,10 +1,10 @@
 ---
 import { getCollection } from 'astro:content'
 import GridLayout from '@/layouts/GridLayout.astro'
-import Card from '@/components/shared/Card.astro'
 import Button from '@/components/shared/Button.astro'
 
 import categories from '@/data/categories'
+import ContentCard from '../components/ContentCard.astro'
 
 const designs = await getCollection('ui', ({ data }) => !data.draft)
 const sortedDesigns = designs.sort(
@@ -38,32 +38,23 @@ const sortedDesigns = designs.sort(
 	</div>
 	<div
 		class='w-full grid grid-cols-1 gap-8 py-12 md:grid-cols-2 lg:grid-cols-3'
+		id='lg'
 	>
 		{
 			sortedDesigns.map((design) => (
-				<>
-					<Card
-						image={{
-							alt: `${design.data.product} thumbnail`,
-							aspectRatio: 1.7777,
-							// @ts-ignore
-							src:
-								design.data.thumbnail ||
-								(Array.isArray(design.data.image)
-									? design.data.image[0]
-									: design.data.image),
-							width: 480,
-						}}
-						link={`/${design.slug}`}
-						title={design.data.product}
-						tag={categories
-							.find(
-								(category) =>
-									category.type === design.data.category
-							)
-							?.title.toLowerCase()}
-					/>
-				</>
+				<ContentCard
+					alt={`${design.data.category} - ${design.data.product}`}
+					aspectRatio={1.7777}
+					src={
+						design.data.thumbnail ||
+						(Array.isArray(design.data.image)
+							? design.data.image[0]
+							: design.data.image)
+					}
+					width={480}
+					title={design.data.product}
+					tag={design.data.category}
+				/>
 			))
 		}
 	</div>
