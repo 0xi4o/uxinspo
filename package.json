@@ -11,27 +11,26 @@
 		"astro": "astro"
 	},
 	"devDependencies": {
-		"@typescript-eslint/parser": "6.2.0",
-		"eslint": "^8.46.0",
-		"eslint-plugin-astro": "^0.28.0",
-		"prettier": "^3.0.0",
-		"prettier-plugin-astro": "^0.11.0",
-		"prettier-plugin-tailwindcss": "^0.4.1"
+		"@typescript-eslint/parser": "6.11.0",
+		"eslint": "^8.53.0",
+		"eslint-plugin-astro": "^0.29.1",
+		"prettier": "^3.1.0",
+		"prettier-plugin-astro": "^0.12.2",
+		"prettier-plugin-tailwindcss": "^0.5.7"
 	},
 	"dependencies": {
-		"@astrojs/image": "^0.17.2",
-		"@astrojs/mdx": "^0.19.7",
-		"@astrojs/partytown": "^1.2.3",
-		"@astrojs/sitemap": "^2.0.1",
-		"@astrojs/tailwind": "^4.0.0",
-		"@astrolib/seo": "^0.4.0",
-		"@fontsource-variable/league-spartan": "^5.0.5",
-		"@fontsource/libre-baskerville": "^5.0.5",
-		"@tailwindcss/typography": "^0.5.9",
-		"astro": "^2.9.6",
-		"astro-compress": "^1.1.50",
-		"lightgallery": "^2.7.1",
-		"sharp": "^0.32.4",
-		"tailwindcss": "^3.3.3"
+		"@astrojs/mdx": "^1.1.5",
+		"@astrojs/partytown": "^2.0.2",
+		"@astrojs/sitemap": "^3.0.3",
+		"@astrojs/tailwind": "^5.0.2",
+		"@astrolib/seo": "^0.6.0",
+		"@fontsource-variable/league-spartan": "^5.0.17",
+		"@fontsource/libre-baskerville": "^5.0.8",
+		"@tailwindcss/typography": "^0.5.10",
+		"astro": "^3.5.4",
+		"astro-compress": "^2.2.3",
+		"lightgallery": "^2.7.2",
+		"sharp": "^0.32.6",
+		"tailwindcss": "^3.3.5"
 	}
 }
