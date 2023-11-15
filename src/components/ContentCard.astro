@@ -5,17 +5,23 @@ import '@/styles/content-card.css'
 type Props = {
 	alt: string
 	aspectRatio: number
+	category: string
 	group?: boolean
 	src: string | string[]
+	tag?: string
 	thumbnail?: string
+	title: string
 	type?: string
 	width: number
 }
 const {
 	alt,
 	aspectRatio,
+	category,
 	group = false,
 	src,
+	tag,
+	title,
 	thumbnail,
 	type = 'image/png',
 	width,
@@ -23,53 +29,65 @@ const {
 ---
 
 <figure class='flex flex-col'>
-	<div>
+	<div
+		class='w-full aspect-video overflow-hidden border-2 border-white object-cover shadow-[5px_5px_0_0_rgba(250,238,231,0.9)] transition-all duration-200 hover:shadow-none'
+	>
 		{
 			Array.isArray(src) && group ? (
-				<div class='flex h-auto w-full flex-col gap-8' id='lg'>
+				<div class='flex h-auto w-full flex-col gap-8'>
 					{src.map((img) => (
-						<a
-							class='image relative flex h-auto w-full border-2 border-white object-cover shadow-[5px_5px_0_0_rgba(250,238,231,0.9)] transition-all duration-200 hover:shadow-none'
-							href={img}
+						<div
+							class='image relative flex h-auto w-full'
+							data-src={img}
 						>
-							<Image
+							<img
 								alt={alt}
 								aspectRatio={aspectRatio}
 								src={img}
 								width={width}
 							/>
-						</a>
+						</div>
 					))}
 				</div>
 			) : (
-				<div
-					class='image relative flex h-auto w-full border-2 border-white object-cover shadow-[5px_5px_0_0_rgba(250,238,231,0.9)] transition-all duration-200 hover:shadow-none'
-					id='lg'
-				>
+				<div class='relative flex h-auto w-full'>
 					{type === 'video/webm' ? (
-						<a
+						<div
+							class='image'
 							data-video={`{"source": [{"src": "${src}", "type": "video/webm"}]}`}
 							data-poster={thumbnail}
 						>
-							<Image
+							<video
 								alt={alt}
 								aspectRatio={aspectRatio}
 								src={thumbnail}
 								width={width}
 							/>
-						</a>
+						</div>
 					) : (
-						<a href={src}>
-							<Image
+						<div class='image' data-src={src}>
+							<img
 								alt={alt}
 								aspectRatio={aspectRatio}
 								src={src}
 								width={width}
 							/>
-						</a>
+						</div>
 					)}
 				</div>
 			)
+		}
+	</div>
+	<div class='mt-4 flex justify-between px-2'>
+		<p class='mt-1 text-xl font-medium leading-6 text-text'>
+			{title}
+		</p>
+		{
+			tag ? (
+				<p class='px-3 bg-text/10 text-text/50 inline-flex items-center justify-center rounded-lg text-sm'>
+					{tag}
+				</p>
+			) : null
 		}
 	</div>
 </figure>
@@ -88,6 +106,7 @@ const {
 		counter: false,
 		download: false,
 		plugins: [lgThumbnail, lgVideo, lgZoom],
+		selector: '.image',
 		thumbnail: true,
 	})
 </script>
