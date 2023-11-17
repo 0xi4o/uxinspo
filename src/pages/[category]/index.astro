@@ -32,14 +32,10 @@ const designs = await getCollection(
 						<ContentCard
 							alt={design.data.product}
 							aspectRatio={1.7777}
-							src={
-								design.data.thumbnail ||
-								(Array.isArray(design.data.image)
-									? design.data.image[0]
-									: design.data.image)
-							}
-							width={480}
+							group={Array.isArray(design.data.image)}
+							src={design.data.image}
 							title={design.data.product}
+							width={480}
 						/>
 					))}
 				</>
