@@ -27,21 +27,19 @@ const {
 } = Astro.props
 ---
 
-<figure class='flex flex-col'>
-	<div
-		class='w-full aspect-video overflow-hidden border-2 border-white object-cover shadow-[5px_5px_0_0_rgba(250,238,231,0.9)] transition-all duration-200 hover:translate-x-[5px] hover:translate-y-[5px] hover:shadow-none'
-	>
+<figure class='flex flex-col w-full'>
+	<div class='w-full aspect-video'>
 		{
 			Array.isArray(src) && group ? (
-				<div class='flex h-auto w-full flex-col gap-8'>
+				<div class='flex h-auto w-full overflow-hidden flex-col aspect-video border-2 border-white shadow-[5px_5px_0_0_rgba(250,238,231,0.9)] transition-all duration-200 hover:translate-x-[5px] hover:translate-y-[5px] hover:shadow-none cursor-pointer'>
 					{src.map((img) => (
 						<div
-							class='image relative flex h-auto w-full'
+							class='image relative flex aspect-video'
 							data-src={img}
 						>
 							<img
+								class='object-top object-cover w-full h-full'
 								alt={alt}
-								aspectRatio={aspectRatio}
 								src={img}
 								width={width}
 							/>
@@ -49,25 +47,25 @@ const {
 					))}
 				</div>
 			) : (
-				<div class='relative flex h-auto w-full'>
+				<div class='relative flex items-start h-auto w-full overflow-hidden aspect-video border-2 border-white shadow-[5px_5px_0_0_rgba(250,238,231,0.9)] transition-all duration-200 hover:translate-x-[5px] hover:translate-y-[5px] hover:shadow-none cursor-pointer'>
 					{type === 'video/webm' ? (
 						<div
-							class='image'
+							class='image w-full h-full'
 							data-video={`{"source": [{"src": "${src}", "type": "video/webm"}]}`}
 							data-poster={thumbnail}
 						>
 							<video
+								class='object-top object-cover w-full h-full'
 								alt={alt}
-								aspectRatio={aspectRatio}
 								src={thumbnail}
 								width={width}
 							/>
 						</div>
 					) : (
-						<div class='image' data-src={src}>
+						<div class='image w-full h-full' data-src={src}>
 							<img
+								class='object-top object-cover w-full h-full'
 								alt={alt}
-								aspectRatio={aspectRatio}
 								src={src}
 								width={width}
 							/>
